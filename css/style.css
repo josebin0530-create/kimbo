@@ -1,831 +1,182 @@
-﻿/* =========================
-   HERO SECTION
-========================= */
+﻿@charset "utf-8";
 
-.nav_section{
-  position:relative;
-  min-height:790px;   /* 배경이미지 높이 */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  padding-top: 200px;
-  padding-bottom: 80px;
-}
-
-/* nav 배경 */
-.nav__bg{
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url("./img/hero.jpg") center/cover no-repeat;
-  z-index:0;
-}
-
-/* nav */
-.nav__inner{
-  position:relative;
-  z-index:1;
-  width:100%;
-  max-width:900px;
-  padding:0 20px;
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  margin-top: 10px;
-  gap: 30px;
-}
-
-
-.nav__title{
-  font-size:55px;
-  color:#fff;
-  font-weight:700;
-  margin:0 0 20px;
-  line-height:1.2;
-}
-
-.nav__desc{
-  font-size:25px;
-  color:rgba(255,255,255,.9);
-  margin-bottom:40px;
-  line-height:1.6;
-}
-
-/* =========================
-   nav CARD BUTTONS
-========================= */
-
-.nav__actions{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.nav-btn{
-  width: 350px;
-  height:130px;
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-  padding:20px 24px;
-  border-radius:22px;
-  transition:.25s ease;
-  text-decoration:none;
-}
-
-.nav-btn__text{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:6px;
-}
-
-.nav-btn strong{
-  font-size:23px;
-  font-weight:700;
-}
-
-.nav-btn span{
-  font-size:14px;
-  opacity:.85;
-}
-
-/* 캡슐 선택버튼 */
-.nav-btn--primary{
-  background:rgba(147, 0, 0, .5);
-  backdrop-filter:blur(10px);
-   -webkit-backdrop-filter:blur(10px);
-  color:#fff;
-  box-shadow:0 15px 40px rgba(0,0,0,.35);
-  border: 1px solid #fff;
-}
-.nav-btn--primary:hover{
-  transform:translateY(-4px);
-  box-shadow:0 25px 60px rgba(0,0,0,.45);
-}
-
-/* 원두 선택버튼 */
-.nav-btn--ghost{
-  background:rgba(255,255,255,.15);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  border:1px solid #930000;
-  color:#fff;
-}
-.nav-btn--ghost:hover{
-  background:rgba(255,255,255,.25);
-  transform:translateY(-4px);
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width:768px){
-
-  header{
-    top:15px;
-  }
-
-  header .inner{
-    width:calc(100% - 24px);
-  }
-
-  .gnb{
-    display:none;
-  }
-
-  .nav_section{
-    min-height:600px;
-  }
-
-  .nav__title{
-    font-size:32px;
-  }
-
-  .nav__desc{
-    font-size:16px;
-  }
-
-  .nav__actions{
-    flex-direction:column;
-  }
-
-  .nav-btn{
-    width:100%;
-    max-width:420px;
-    height:80px;
-  }
-}
-
-/* =========================
-   HERO SECTION: title + button
-========================= */
-
-.hero_section{
-  width: 1920px;
-  max-width: 100%;
-  height: 950px;
-  margin: 0 auto;
-  padding: 40px 80px;
-  background: #E8E8E0;
+/* main_visual*/
+.main_visual{
+position: relative;
+  width: 100%;
+  height: 100vh; /* 화면 전체 높이 */
+  background-image: url("../img/main_visual.png");
+  background-size: cover;      /* 꽉 채움 */
+  background-position: center; /* 중앙 기준 */
+  background-repeat: no-repeat;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  gap: 50px;
+  align-items: center; /* 세로 중앙 */
+  text-align: center;
+  color: #fafafa;
+}
+.main_contents {
+  max-width: 1600px;
+  padding: 0 20px;
 }
 
-.hero_title{
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 80px;
-}
-
-.hero_title__left{
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  min-width: 0;
-}
-
-.hero_card{
-  width: 100%;
-  background: #CFCFC8;
-  border-radius: 22px;
-  padding: 10px 25px;
-  min-height: 125px;
-  display: grid;
-  grid-template-columns: 96px 1fr 92px;
-  column-gap: 16px;
-  align-items: center;
-}
-/* 카드안에 숫자 (1,2,3) */
-.hero_title__left .step-card__num {
-  font-size: 50px;
-}
-
-.hero_card--1{
-  width: 745px;
-  background: rgba(23,23,23,.13);
-}
-
-.hero_card--2{
-  width: 866px;
-  background: rgba(23,23,23,.17);
-}
-
-.hero_card--3{
-  width: 987px;
-  background: rgba(23,23,23,.22);
-}
-
-.step-card__title {
+.main_desc {
   font-size: 26px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+  font-family: "Pretendard", sans-serif;
+}
+
+.main_title {
+  font-size: 68px;
   font-weight: 600;
-}
-
-.step-card__subtitle,
-.step-card__list {
-  font-size: 17px;
-  font-weight: 500;
-}
-
-.step-card__icon {
-  font-size: 50px;
-}
-
-
-.hero_title__right{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero_title__headline{
-  margin: 0 0 20px;
-  color: #171717;
-  font-size: 52px;
-  line-height: 1.2;
-  font-weight: 800;
-}
-
-.hero_title__headline .accent{
-  color: #590202;
-}
-
-.hero_title__desc{
-  margin: 0;
-  color: #171717;
-  font-size: 24px;
-  line-height: 1.45;
-}
-
-.hero_btn{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.hero_btn__link{
-  width: 450px;
-  height: 60px;
-  padding: 15px 158px;
-  border-radius: 20px;
-  background: #590202;
-  color: #E8E8E0;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.hero_btn__link:hover{
-  background: #700303;
-}
-
-@media (max-width: 1200px){
-  .hero_section{
-    height: auto;
-    min-height: 935px;
-    padding: 40px 24px;
-  }
-
-  .hero_title{
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .hero_title__left{
-    width: 100%;
-  }
-
-  .hero_card--1,
-  .hero_card--2,
-  .hero_card--3{
-    width: 100%;
-    max-width: 987px;
-  }
-
-  .hero_title__headline{
-    font-size: 38px;
-  }
-
-  .hero_title__desc{
-    font-size: 18px;
-  }
-
-  .hero_btn__link{
-    width: min(450px, 100%);
-    padding: 15px 24px;
-  }
-}
-
-
-/* =========================
-   POPULAR SECTION
-========================= */
-
-.popular_section{
-  width: 100%;
-  max-width: 100%;
-  height: 1032px;
-  margin: 0 auto;
-  background: #fafafa;
-  border-radius: 50px 50px 0 0;
-  overflow: hidden;
-  padding: 40px 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-}
-
-.popular_title{
-  text-align: center;
-  margin-bottom: 0;
-  font-family: "Inter", sans-serif;
-}
-
-.popular_title h2{
-  margin: 0 0 18px;
-  color: #171717;
-  font-size: 50px;
-  font-weight: 500;
-  line-height: 1.15;
-}
-
-.popular_title p{
-  margin: 0;
-  color: #171717;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.45;
-}
-
-.popular_card{
-  width: 100%;
-  max-width: 1760px;
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: none;
-  scroll-behavior: auto;
-  scroll-padding: 0;
-  padding: 4px 0 12px;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  touch-action: pan-x;
-  cursor: grab;
-}
-
-.popular_card::-webkit-scrollbar{
-  display: none;
-}
-
-.popular_card::-webkit-scrollbar-thumb{
-  background: rgba(89,9,2,.35);
-  border-radius: 999px;
-}
-
-.popular_card.is-dragging{
-  cursor: grabbing;
-  scroll-behavior: auto;
-}
-
-.popular_item{
-  width: 240px;
-  min-width: 240px;
-  height: 410px;
-  border-radius: 25px;
-  background: rgba(89,9,2,.30);
-  scroll-snap-align: none;
-  transition: background .22s ease, transform .22s ease;
-  box-shadow: 4px 4px 10px rgba(0,0,0,.25);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 32px 20px 26px;
-}
-
-.popular_item:hover,
-.popular_item.is-center{
-  background: rgba(140,11,0,.70);
-  transform: translateY(-4px);
-}
-
-.popular_item__img{
-  width: 130px;
-  height: 210px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 34px;
-}
-
-.popular_item__img img{
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.popular_item__title{
-  text-align: center;
-  color: #fafafa;
-  font-family: "Inter", sans-serif;
-}
-
-.popular_item__title strong{
-  display: block;
-  font-size: 20px;
-  font-weight: 700;
   line-height: 1.3;
-  margin-bottom: 8px;
-}
-
-.popular_item__title span{
-  display: block;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.35;
-  opacity: .92;
-}
-
-.popular_note{
-  margin: 0;
-  text-align: center;
-  color: #171717;
-  font-family: "Inter", sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  opacity: .72;
-}
-
-@media (max-width: 1200px){
-  .popular_section{
-    height: auto;
-    min-height: 1032px;
-    padding: 40px 24px;
-    justify-content: center;
-    gap: 30px;
-  }
-
-  .popular_title h2{
-    font-size: 38px;
-  }
-
-  .popular_title p{
-    font-size: 17px;
-  }
-
-  .popular_card{
-    padding-left: 0;
-    padding-right: 0;
-    scroll-padding: 0;
-  }
-
-  .popular_item{
-    scroll-snap-align: none;
-  }
-}
-
-/* =========================
-   INFO SECTION
-========================= */
-
-.info_section{
-  width: 100%;
-  height: 1307px;
-  margin: 0 auto;
-  padding: 150px 85px;
-  background: #fafafa;
-  border-radius: 0 0 50px 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 70px;
-}
-
-.info_tit{
-  text-align: center;
-}
-
-.info_tit h2{
-  margin: 0;
   font-family: "Pretendard", sans-serif;
-  font-size: 56px;
-  font-weight: 700;
-  color: #171717;
-  line-height: 1.2;
 }
 
-.info_tit .accent{
-  color: #8B1E1E;
-}
 
-.info_box{
-  width: 1533px;
-  max-width: 100%;
-  height: 874px;
-  padding: 30px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 100px;
-  box-sizing: border-box;
-}
-
-.info_card{
-  border-radius: 30px;
-  overflow: hidden;
-  text-decoration: none;
-  color: #fafafa;
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  box-shadow: 4px 4px 10px rgba(0,0,0,.25);
-  will-change: transform;
-  transition: transform .42s cubic-bezier(.22,.61,.36,1), box-shadow .42s cubic-bezier(.22,.61,.36,1);
-}
-
-.info_card__img{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.info_card::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.55) 100%);
-  transition: background .42s cubic-bezier(.22,.61,.36,1);
-}
-
-.info_card:hover{
-  transform: translateY(-6px);
-  box-shadow: 8px 12px 20px rgba(0,0,0,.32);
-}
-
-.info_card:hover::before{
-  background: linear-gradient(180deg, rgba(0,0,0,0) 28%, rgba(0,0,0,.68) 100%);
-}
-
-.info_card__content{
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  padding: 0 28px 48px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
-}
-
-.info_card__content strong{
-  font-family: "Pretendard", sans-serif;
-  font-size: 40px;
-  font-weight: 500;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-}
-
-.info_card__arrow{
-  width: 54px;
-  height: 54px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-}
-
-.info_card__arrow svg{
-  width: 36px;
-  height: 36px;
-  display: block;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.info_card--large{
-  width: 674px;
-  height: 814px;
-}
-
-.info_box__right{
-  width: 691px;
-  display: flex;
-  flex-direction: column;
-  gap: 94px;
-}
-
-.info_card--small{
-  width: 691px;
-  height: 360px;
-}
-
-@media (max-width: 1200px){
-  .info_section{
-    height: auto;
-    padding: 80px 24px;
-    gap: 34px;
-  }
-
-  .info_tit h2{
-    font-size: 38px;
-  }
-
-  .info_box{
-    height: auto;
-    padding: 0;
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .info_box__right{
-    width: 100%;
-    gap: 18px;
-  }
-
-  .info_card--large,
-  .info_card--small{
-    width: 100%;
-    height: 360px;
-  }
-
-  .info_card__content strong{
-    font-size: 24px;
-  }
-}
-
-/* =========================
-   BRAND SECTION
-========================= */
+/* brand_section */
 
 .brand_section{
   width: 100%;
-  height: 777px;
-  margin: 0 auto;
-  padding: 80px;
-  background: #E8E8E0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 68px;
-}
-
-.brand_title{
-  text-align: center;
-}
-
-.brand_title__top{
-  margin: 0 0 16px;
-  color: #621919;
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.2;
-}
-
-.brand_title__main{
-  margin: 0;
-  color: #171717;
-  font-family: "Pretendard", sans-serif;
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.brand_title__main .accent{
-  color: #621919;
-}
-
-.brand_box{
-  width: 988px;
   max-width: 100%;
-  height: 342px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 56px;
-}
-
-.brand_box__image{
-  width: 460px;
-  height: 320px;
-  border-radius: 20px;
-  overflow: hidden;
-  flex: 0 0 auto;
-}
-
-.brand_box__image img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.brand_box__content{
-  flex: 1;
-  height: 324px;
+  height: 950px;
+  margin: 0 auto;
+  padding: 180px 80px;
+  background: #F4F4EF;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.brand_box__text{
-  margin: 0;
-  color: #171717;
-  font-family: "Pretendard", sans-serif;
-  font-size: 23px;
-  font-weight: 400;
-  line-height: 1.45;
-  text-align: left;
-}
-
-.brand_box__link{
-  margin-left: auto;
-  display: inline-flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  color: #171717;
-  font-family: "Pretendard", sans-serif;
-  font-size: 24px;
+  gap: 50px;
+}
+
+.brand_contents {
+  width: 1600px;
+  height: 600px;
+}
+
+.brand_desc {
+  font-size: 27px;
+  font-family: "";
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  color: #777171;
+}
+
+.brand_title {
+  font-size: 58px;
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  color: #260101;
+  padding-top: 10px;
+  margin-bottom: 80px;/* 타이틀과 카드간의 거리 */
+  gap: 10px;
+}
+
+.brand_title .accent {
+  font-size: 63px;
+  font-weight: 700;
+  color: #8C030E;
+}
+
+.brand_card{
+  width: 100%;
+  height: 290px;
+  gap: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+ 
+}
+
+.brand_card .card {
+  width: 340px;
+  height: 290px;
+  padding: 30px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+     /* 🔥 유리 핵심 */
+  background: rgba(240, 190, 182, 0.446);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+   /* 유리 바탕 */
+  background: rgba(213, 177, 177, 0.22);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+
+  /* 유리 테두리(빛 받는 느낌) */
+  border: 1px solid rgba(225, 214, 214, 0.55);
+
+  /* 바깥쪽 그림자(떠있는 느낌) + 안쪽 그림자(볼록) */
+  box-shadow:
+    0 20px 20px rgba(130, 130, 130, 0.06),   /* 메인 외부 그림자 */
+    0 6px 18px rgba(119, 118, 118, 0.06),    /* 보조 외부 그림자 */
+    inset 0 1px 0 rgba(255, 255, 255, 0.65), /* 윗면 하이라이트 */
+    inset 0 -10px 10px rgba(0, 0, 0, 0.05);  /* 아래쪽 음영 */
+}
+
+.brand_card .card_tit{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: center;
+  text-align: center;
+  border-bottom: 1px solid #171717;
+}
+.brand_card .card_tit h3 {
+  width: 100%;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.brand_card .card strong {
+  font-size: 28px;
   font-weight: 500;
-  text-decoration: none;
+  margin-top: 40px;
 }
 
-.brand_box__link:hover {
-  color: #930000;
+.brand_card .card p {
+  font-size: 20px;
+  font-size: 100;
+  margin-top: 30px;
 }
 
-.brand_box__arrow{
-  font-size: 24px;
-  line-height: 1;
+.brand_section .brand_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  
 }
 
-@media (max-width: 1200px){
-  .brand_section{
-    height: auto;
-    padding: 60px 24px;
-    gap: 36px;
-  }
-
-  .brand_title__main{
-    font-size: 32px;
-  }
-
-  .brand_box{
-    height: auto;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .brand_box__image,
-  .brand_box__content{
-    width: 100%;
-    height: auto;
-  }
-
-  .brand_box__image{
-    max-height: 324px;
-  }
-
-  .brand_box__text{
-    font-size: 20px;
-  }
-
-  .brand_box__link{
-    margin-left: 0;
-    margin-top: 16px;
-    font-size: 20px;
-  }
+.brand_section .brand_btn .brand_story {
+  width: 284px;
+  height: 66px;
+  font-size: 22px;
+  border: 1px solid #8C030E;
+  border-radius: 15px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
 }
+.icon{
+  font-size: 20px;  /* 크기 조절 */
+  margin-left: 4px;   /* 텍스트와 간격 */
+   position: relative;
+  top: 2px;
+}
+
+
+
 
 /* =========================
    B2B SECTION
@@ -1018,62 +369,8 @@
   stroke-linejoin: round;
 }
 
-@media (max-width: 1600px){
-  .b2b_section{
-    height: auto;
-    padding: 64px 24px;
-  }
 
-  .b2b_banner{
-    width: 100%;
-    max-width: 1552px;
-    height: auto;
-    gap: 28px;
-  }
 
-  .b2b_txt{
-    width: 100%;
-  }
 
-  .b2b_card{
-    width: 100%;
-  }
-
-  .b2b_card_item{
-    width: calc((100% - 24px) / 3);
-  }
-}
-
-@media (max-width: 1200px){
-  .b2b_txt{
-    height: auto;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .b2b_txt__left,
-  .b2b_txt__right{
-    width: 100%;
-    height: auto;
-  }
-
-  .b2b_txt__right{
-    max-height: 400px;
-  }
-
-  .b2b_txt__headline{
-    font-size: 44px;
-  }
-
-  .b2b_card{
-    height: auto;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .b2b_card_item{
-    width: 100%;
-  }
-}
 
 
