@@ -1,155 +1,176 @@
 @charset "utf-8";
 
-:root{
-  --bg:#E8E8E0;/* border-radious를 줘도 자연스러워 보임 / 전체적인배경색 */
-  --ink:#1b1b1b;
-  --brand:#7b0f12;
-  --brand2:#a61a1f;
+:root {
+  --bg: #E8E8E0;
+  /* border-radious를 줘도 자연스러워 보임 / 전체적인배경색 */
+  --ink: #1b1b1b;
+  --brand: #7b0f12;
+  --brand2: #a61a1f;
 }
 
 /* --HEADER-- */
 
-header{
+header {
   position: absolute;
-  top:30px;
-  left:0;
-  width:100%;
-  z-index:1000;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-.header{
-  width:min(1200px,calc(100% - 80px));
-  margin:0 auto;
-  height:60px;
-  padding:0 24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:rgba(96,96,96,.37);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,.08);
+.header {
+  width: min(1600px, calc(100% - 80px));
+  margin: 0 auto;
+  height: 80px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(173, 173, 173, .37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 15px;
 }
 
 /* 킴보 로고 */
-.logo img{
-  height:26px;
+.logo img {
+  height: 40px;
 }
 
 /* nav */
-nav{
-  flex:1;
-  display:flex;
-  justify-content:center;
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 /* 1depth */
-.gnb{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  gap:55px;
+.gnb {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 60px;
 }
 
-.gnb > li{
-  position:relative;
+.gnb>li {
+  position: relative;
 }
 
-.gnb > li > a{
-  font-size:18px;
-  font-weight:300;
-  color:rgba(255,255,255,.85);
-  transition:.2s;
+.gnb>li>a {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, .85);
+  transition: .2s;
   font-family: "Pretendard", sans-serif;
-}
-.gnb > li > a:hover{
-  color:#fff;
+  padding: 20px;
 }
 
-/* =========================
-   SUB DROPDOWN 
-========================= */
-
-.sub{
-  position:absolute;
-  top:28px;
-  left:50%;
-  transform:translateX(-50%);
-  list-style:none;
-  padding:20px;
-  margin:16px 0 0;
-  min-width:250px;
-  background:rgba(20,20,20,.95);
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,.08);
-  opacity:0;
-  visibility:hidden;
-  transition:.25s ease;
+.gnb>li>a:hover {
+  color: #fff;
 }
 
-.sub li{
-  margin-bottom:8px;
-}
-.sub li:last-child{
-  margin-bottom:0;
+/* 드롭다운 메뉴 sub */
+
+.sub {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  padding: 20px;
+  margin: 16px 0 0;
+  min-width: 250px;
+  background: rgba(171, 171, 171, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .25s ease;
 }
 
-.sub a{
-  font-size:15px;
-  color:rgba(255,255,255,.85);
-  padding:6px 8px;
+.sub li {
+  margin: 5px;
+}
+
+.sub li:last-child {
+  margin-bottom: 0;
+}
+
+.sub a {
+  font-size: 16px;
+  color: rgba(255, 255, 255, .85);
+  padding: 10px 1px;
   display: flex;
   justify-content: center;
-  border-radius:6px;
+  border-radius: 6px;
 }
-.sub a:hover{
-  background:rgba(255,255,255,.1);
-  color:#fff;
+
+.sub a:hover {
+  color: #8C030E;
 }
 
 /* hover 메뉴 선택 */
-.gnb > li:hover .sub{
-  opacity:1;
-  visibility:visible;
+.gnb>li:hover .sub {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* --right_btn-- */
 
-.header_right{
-  display:flex;
-  gap:20px;
+.header_right {
+  display: flex;
+  gap: 20px;
 }
 
-.right_btn{
-  height:35px;
-  padding:0 14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:13px;
-  color:#fff;
-  border:1px solid rgba(255,255,255,.4);
-  background:rgba(255,255,255,.08);
-  transition:.2s;
+.right_btn:nth-child(1) {
+  height: 38px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #fafafa;
+  border: 1px solid rgba(255, 255, 255, 0.835);
+  background: rgba(203, 203, 203, 0.479);
+  transition: .2s;
 }
 
-.right_btn:hover{
-  background:rgba(255,255,255,.2);
+.right_btn:nth-child(2) {
+  height: 38px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #fafafa;
+  border: 1px solid rgba(255, 255, 255, 0.835);
+  background: rgba(184, 22, 22, 0.495);
+  transition: .2s;
 }
 
-@media (max-width:768px){
+.right_btn:nth-child(1):hover {
+  background: rgba(255, 255, 255, .2);
+}
 
-  header{
-    top:15px;
+.right_btn:nth-child(2):hover {
+  background: rgba(184, 22, 22, 0.881);
+}
+
+@media (max-width:768px) {
+
+  header {
+    top: 15px;
   }
 
-  .header-inner{
-    width:calc(100% - 24px);
+  .header-inner {
+    width: calc(100% - 24px);
   }
 
-  .gnb{
-    display:none;
+  .gnb {
+    display: none;
   }
 }
 
@@ -157,7 +178,7 @@ nav{
    FOOTER
 ========================= */
 
-.footer{
+.footer {
   width: 100%;
   height: 710px;
   background: #260101;
@@ -168,7 +189,7 @@ nav{
   align-items: center;
 }
 
-.footer_top{
+.footer_top {
   width: 80%;
   color: #ffffff;
   font-family: "Pretendard", sans-serif;
@@ -179,14 +200,14 @@ nav{
   margin-top: 50px;
 }
 
-.ractangle{
+.ractangle {
   width: 80%;
   height: 1px;
   margin-top: 50px;
   background: rgba(255, 255, 255, 0.9);
 }
 
-.footer_columns{
+.footer_columns {
   width: max-content;
   max-width: 80%;
   margin-top: 100px;
@@ -200,13 +221,13 @@ nav{
   overflow-y: hidden;
 }
 
-.footer_menu_box{
+.footer_menu_box {
   width: 404px;
   height: 172px;
   color: #ffffff;
 }
 
-.footer_menu_box h3{
+.footer_menu_box h3 {
   margin: 0 0 22px;
   font-family: "Pretendard", sans-serif;
   font-size: 23px;
@@ -215,7 +236,7 @@ nav{
   text-align: left;
 }
 
-.footer_menu_box ul{
+.footer_menu_box ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -224,11 +245,11 @@ nav{
   gap: 10px;
 }
 
-.footer_menu_box li{
-  margin: 0 ;
+.footer_menu_box li {
+  margin: 0;
 }
 
-.footer_menu_box a{
+.footer_menu_box a {
   color: #ffffff;
   font-family: "Pretendard", sans-serif;
   font-size: 15px;
@@ -237,29 +258,29 @@ nav{
   text-align: left;
 }
 
-.footer_columns + .ractangle{
+.footer_columns+.ractangle {
   margin-top: 100px;
 }
 
-@media (max-width: 1024px){
-  .footer{
+@media (max-width: 1024px) {
+  .footer {
     height: auto;
     padding: 40px 24px;
   }
 
-  .footer_top{
+  .footer_top {
     font-size: 34px;
   }
 
-  .ractangle{
+  .ractangle {
     width: 100%;
   }
 
-  .footer_columns{
+  .footer_columns {
     gap: 24px;
   }
 
-  .footer_menu_box{
+  .footer_menu_box {
     width: calc((100% - 24px) / 2);
     min-width: 260px;
     height: auto;
