@@ -1,4 +1,6 @@
 ﻿@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 
 /* main_visual*/
 .main_visual {
@@ -29,14 +31,14 @@
   font-size: 26px;
   margin-bottom: 20px;
   opacity: 0.9;
-  font-family: "Pretendard", sans-serif;
+  font-family: var(--font-main)
 }
 
 .main_title {
   font-size: 68px;
   font-weight: 600;
   line-height: 1.3;
-  font-family: "Pretendard", sans-serif;
+  font-family: var(--font-main);
 }
 
 
@@ -63,7 +65,7 @@
 
 .brand_desc {
   font-size: 27px;
-  font-family: "";
+  font-family: var(--font-main);
   font-weight: 300;
   display: flex;
   justify-content: center;
@@ -73,6 +75,7 @@
 .brand_title {
   font-size: 58px;
   font-weight: 100;
+  font-family: var(--font-sub);
   display: flex;
   justify-content: center;
   color: #260101;
@@ -144,17 +147,21 @@
   width: 100%;
   font-size: 35px;
   font-weight: 600;
+  font-family: var(--font-sub);
 }
 
 .brand_card .card strong {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 500;
+  font-family: var(--font-main);
   margin-top: 40px;
 }
 
 .brand_card .card p {
   font-size: 20px;
   font-size: 100;
+  font-family: var(--font-main);
+  line-height: 1.6;
   margin-top: 30px;
 }
 
@@ -169,8 +176,11 @@
   width: 284px;
   height: 66px;
   font-size: 22px;
+  font-family: var(--font-main);
+  background: #620008;
   border: 1px solid #8C030E;
   border-radius: 15px;
+  color: #fafafa;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -215,12 +225,14 @@
 .popular_title p {
   font-size: 20px;
   font-weight: 300;
+  font-family: var(--font-main);
   color: #171717;
 }
 
 .popular_title h3 {
   font-size: 60px;
   font-weight: 500;
+  font-family: var(--font-sub);
   color: #171717;
 }
 
@@ -236,19 +248,24 @@
 
 .popular_card::-webkit-scrollbar {
   display: none;
-  /* Chrome/Safari */
 }
 
 .best_item {
   flex: 0 0 300px;
-  /* 카드 폭 고정(원하는 값으로) */
   scroll-snap-align: start;
-  /* 스냅 기준 */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   cursor: pointer;
+  will-change: transform;
+  transition: transform .3s ease;
+  overflow: hidden;
+}
+
+.best_item:hover {
+  transform: scale(.955);
+  /* hover 했을때 버튼처럼 들어감 */
 }
 
 .item_img {
@@ -256,7 +273,8 @@
   height: 380px;
   /* 이미지 영역 높이 */
   border-radius: 18px;
-  background: rgba(248, 246, 242, 0.87);
+  background: rgba(240, 238, 231, 0.87);
+  box-shadow: 5px 5px 10px rgba(94, 36, 4, 0.063);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -283,7 +301,8 @@
 .item_txt strong {
   display: block;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
+  font-family: var(--font-main);
   line-height: 1.35;
   margin-bottom: 10px;
 }
@@ -321,12 +340,15 @@
 
 .info_tit p {
   font-size: 20px;
+  font-weight: 300;
+  font-family: var(--font-main);
   color: #171717;
 }
 
 .info_tit h3 {
   font-size: 56px;
   font-weight: 500;
+  font-family: var(--font-sub);
   color: #171717;
 }
 
@@ -412,6 +434,7 @@
   color: #fafafa;
   font-size: 28px;
   font-weight: 400;
+  font-family: var(--font-main);
   line-height: 1.25;
   word-break: keep-all;
   white-space: nowrap;
@@ -471,11 +494,13 @@
 .cta_tit p {
   font-size: 20px;
   font-weight: 300;
+  font-family: var(--font-main);
 }
 
 .cta_tit h3 {
   font-size: 60px;
   font-weight: 500;
+  font-family: var(--font-sub);
 }
 
 .cta_contents {
@@ -511,12 +536,15 @@
 .box_text h3 {
   font-size: 24px;
   font-weight: 600;
+  font-family: var(--font-main);
   color: #171717;
 }
 
 .box_text p {
   font-size: 16px;
   font-weight: 400;
+  font-family: var(--font-main);
+  line-height: 1.6;
   color: #171717;
 }
 
@@ -534,11 +562,14 @@
   gap: 80px;
 }
 
-.cta_btn .btn_left {
+.cta_btn .btn_left,
+.cta_btn .btn_right {
   width: 284px;
   height: 66px;
   font-size: 22px;
-  color: #260101;
+  font-family: var(--font-main);
+  background: #620008;
+  color: #fafafa;
   border: 1px solid #8C030E;
   border-radius: 15px;
   display: inline-flex;
@@ -548,13 +579,15 @@
   gap: 20px;
 }
 
-.cta_btn .btn_right {
+.cta_btn .btn_left:hover,
+.cta_btn .btn_right:hover {
   width: 284px;
   height: 66px;
   font-size: 22px;
-  background: #8C030E;
-  color: #fafafa;
-  border: 1px solid #8C030E;
+  font-family: var(--font-main);
+  background: #fafafa;
+  color: #260101;
+  border: 1px solid #260101;
   border-radius: 15px;
   display: inline-flex;
   justify-content: center;
@@ -600,24 +633,31 @@
 .b2b_banner h3 {
   font-size: 60px;
   font-weight: 500;
+  font-family: var(--font-main);
+  letter-spacing: 1.5;
   color: #fafafa;
 }
 
 .b2b_banner .accent {
   font-size: 60px;
   font-weight: 600;
+  font-family: var(--font-sub);
   color: #8C030E;
 }
 
 .b2b_banner p {
   font-size: 25px;
   font-weight: 200;
+  font-family: var(--font-main);
+  line-height: 1.4;
   color: #fafafa;
 }
 
 .b2b_banner span {
   font-size: 30px;
   font-weight: 400;
+  font-family: var(--font-main);
+  letter-spacing: 1.4;
   color: #fafafa;
 }
 
@@ -632,13 +672,20 @@
   width: 264px;
   height: 60px;
   font-size: 20px;
-  background: #8C030E;
+  font-family: var(--font-main);
+  background: #620008;
   color: #fafafa;
-  border: 1px solid #8C030E;
   border-radius: 15px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  will-change: transform;
+  transition: transform .3s ease;
   gap: 20px;
+}
+
+.b2b_btn:hover .b2b_cta {
+  background: #8C030E;
+  transform: scale(.955);
 }

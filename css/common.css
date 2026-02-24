@@ -1,4 +1,6 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 
 :root {
   --bg: #E8E8E0;
@@ -6,6 +8,8 @@
   --ink: #1b1b1b;
   --brand: #7b0f12;
   --brand2: #a61a1f;
+  --font-main: 'Noto Sans KR', sans-serif;
+  --font-sub: 'Pretendard Variable', 'Pretendard', sans-serif;
 }
 
 /* --HEADER-- */
@@ -16,6 +20,12 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
+  transition: transform .3s ease;
+  will-change: transform;
+}
+
+header.is-hidden {
+  transform: translateY(calc(-100% - 20px));
 }
 
 .inner {
@@ -63,7 +73,7 @@ nav {
   font-weight: 500;
   color: rgba(255, 255, 255, .85);
   transition: .2s;
-  font-family: "Pretendard", sans-serif;
+  font-family: var(--font-sub);
   padding: 20px;
 }
 
@@ -187,7 +197,7 @@ nav {
 .footer_top .footer_logo {
   display: inline-block;
   color: #ffffff;
-  font-family: "Pretendard", sans-serif;
+  font-family: var(--font-sub);
   font-size: 40px;
   font-weight: 700;
   line-height: 1.1;
@@ -223,7 +233,7 @@ nav {
 
 .menu_box h3 {
   margin: 0 0 25px;
-  font-family: "Pretendard", sans-serif;
+  font-family: var(--font-sub);
   font-size: 25px;
   font-weight: 500;
   color: #ffffff;
@@ -243,7 +253,7 @@ nav {
 
 .menu_box a {
   color: #ffffff;
-  font-family: "Pretendard", sans-serif;
+  font-family: var(--font-main);
   font-size: 15px;
   font-weight: 300;
   line-height: 1.4;
