@@ -194,7 +194,7 @@
 .popular_section {
   width: 100%;
   height: 959px;
-  padding: 130px 300px;
+  padding: 130px 160px;
   background-color: #fafafa;
   border-radius: 20px 20px 0 0;
   display: flex;
@@ -235,13 +235,16 @@
   touch-action: pan-y;
 }
 
-.popular_card::-webkit-scrollbar{
-  display: none;             /* Chrome/Safari */
+.popular_card::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
 }
 
-.best_item{
-  flex: 0 0 300px;           /* 카드 폭 고정(원하는 값으로) */
-  scroll-snap-align: start;  /* 스냅 기준 */
+.best_item {
+  flex: 0 0 300px;
+  /* 카드 폭 고정(원하는 값으로) */
+  scroll-snap-align: start;
+  /* 스냅 기준 */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -249,47 +252,56 @@
   cursor: pointer;
 }
 
-.item_img{
+.item_img {
   width: 300px;
-  height: 380px;              /* 이미지 영역 높이 */
+  height: 380px;
+  /* 이미지 영역 높이 */
   border-radius: 18px;
-  background: rgba(248,246,242,0.87);
+  background: rgba(248, 246, 242, 0.87);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
   box-sizing: border-box;
 }
-.item_img img{
+
+.item_img img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
   display: block;
 }
 
-.item_txt{
+.item_txt {
   width: 100%;
   margin-top: 14px;
-  margin-left: 30px;/* 카드의 border-radious에 맞춰서 텍스트도 들어와야함 */
-  text-align: start; /* 왼쪽정렬 */
+  margin-left: 30px;
+  /* 카드의 border-radious에 맞춰서 텍스트도 들어와야함 */
+  text-align: start;
+  /* 왼쪽정렬 */
 }
-.item_txt strong{
+
+.item_txt strong {
   display: block;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.35;
   margin-bottom: 10px;
 }
-.item_txt p{
+
+.item_txt p {
   margin: 0;
   font-size: 14px;
   opacity: 0.8;
 }
 
+
+/* info_section */
+
 .info_section {
   width: 100%;
   height: 1176px;
-  padding: 130px 85px;
+  padding: 130px 160px;
   background-color: #fafafa;
   display: flex;
   flex-direction: column;
@@ -297,15 +309,116 @@
   overflow: visible;
 }
 
-.info_section.inner{
-  width: 1600px;
-  height: 916px;
-  gap: 80px;
+
+.info_tit {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 15px;
 }
 
-.info_section p {}
-.info_section h3{}
+.info_tit p {
+  font-size: 20px;
+  color: #171717;
+}
 
+.info_tit h3 {
+  font-size: 56px;
+  font-weight: 500;
+  color: #171717;
+}
 
+.info_tit .accent {
+  font-size: 60px;
+  font-weight: 600;
+  color: #8C030E;
+}
 
+.info_section ul {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
+.info_section ul li {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  border-radius: 28px;
+  transition: flex 0.45s ease;
+  cursor: pointer;
+}
+
+.info_section ul li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(233, 227, 227, 0.51);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: 1;
+}
+
+.info_section ul:hover li {
+  flex: 0.75;
+}
+
+.info_section ul li:hover {
+  flex: 2.75;
+}
+
+.info_section ul li img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.45s ease, filter 0.45s ease;
+  transform: scale(1);
+  filter: none;
+  z-index: 0;
+}
+
+.info_section ul li:hover img {
+  transform: scale(1.04);
+  filter: blur(2px) brightness(0.95);
+}
+
+.info_section ul li:hover::after {
+  opacity: 1;
+}
+
+.info_section .txt_box {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+}
+
+.info_section .txt_box a {
+  display: inline-block;
+  max-width: 100%;
+  color: #fafafa;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.25;
+  word-break: keep-all;
+  white-space: normal;
+  transition: color 0.35s ease;
+}
+
+.info_section ul li:hover .txt_box a {
+  color: #171717;
+  white-space: nowrap;
+  overflow: hidden;
+}
