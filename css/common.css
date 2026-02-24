@@ -169,9 +169,7 @@ nav {
   background: rgba(184, 22, 22, 0.881);
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* footer_section */
 
 .footer_section {
   width: 100%;
@@ -260,27 +258,26 @@ nav {
   text-align: left;
 }
 
-@media (max-width: 1024px) {
-  .footer {
-    height: auto;
-    padding: 40px 24px;
-  }
 
-  .footer_top {
-    font-size: 34px;
-  }
-
-  .ractangle {
-    width: 100%;
-  }
-
-  .footer_columns {
-    gap: 24px;
-  }
-
-  .footer_menu_box {
-    width: calc((100% - 24px) / 2);
-    min-width: 260px;
-    height: auto;
-  }
+.menu_box a {
+  position: relative;
+  text-decoration: none;
+  color: #fafafa;
 }
+
+.menu_box a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: #fafafa;
+  transition: width 0.3s ease;
+}
+
+.menu_box a:hover::after {
+  width: 100%;
+}
+
+

@@ -257,4 +257,28 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .footer {
+    height: auto;
+    padding: 40px 24px;
+  }
+
+  .footer_top {
+    font-size: 34px;
+  }
+
+  .ractangle {
+    width: 100%;
+  }
+
+  .footer_columns {
+    gap: 24px;
+  }
+
+  .footer_menu_box {
+    width: calc((100% - 24px) / 2);
+    min-width: 260px;
+    height: auto;
+  }
+}
 
