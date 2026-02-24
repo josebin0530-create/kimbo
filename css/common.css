@@ -163,88 +163,91 @@ nav {
    FOOTER
 ========================= */
 
-.footer {
+.footer_section {
   width: 100%;
   height: 710px;
   background: #260101;
-  padding: 50px 80px;
+  padding: 80px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  align-self: stretch;
+  gap: 30px;
 }
 
 .footer_top {
-  width: 80%;
+  width: 1600px;
+  padding: 50px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  /* ⭐ 첫 번째 선 */
+}
+
+.footer_top .footer_logo {
+  display: inline-block;
   color: #ffffff;
   font-family: "Pretendard", sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.1;
   text-align: left;
-  margin-top: 50px;
+  letter-spacing: 0.5px;
 }
 
-.ractangle {
-  width: 80%;
-  height: 1px;
-  margin-top: 50px;
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.footer_columns {
+.footer_menu {
   width: max-content;
-  max-width: 80%;
-  margin-top: 100px;
+  max-width: 1600px;
+  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  /* 컬럼 간 간격 */
+  padding-top: 48px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  /* ⭐ 두 번째 선 */
   align-items: flex-start;
   flex-wrap: nowrap;
-  gap: 100px;
-  overflow-x: auto;
-  overflow-y: hidden;
+  gap: 200px;
 }
 
-.footer_menu_box {
-  width: 404px;
-  height: 172px;
-  color: #ffffff;
+
+.menu_box {
+  width: 340px;
+  height: 180px;
+  gap: 50px;
 }
 
-.footer_menu_box h3 {
-  margin: 0 0 22px;
+.menu_box h3 {
+  margin: 0 0 25px;
   font-family: "Pretendard", sans-serif;
-  font-size: 23px;
+  font-size: 25px;
   font-weight: 500;
   color: #ffffff;
   text-align: left;
 }
 
-.footer_menu_box ul {
+.menu_box ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
-.footer_menu_box li {
-  margin: 0;
-}
 
-.footer_menu_box a {
+
+.menu_box a {
   color: #ffffff;
   font-family: "Pretendard", sans-serif;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.4;
   text-align: left;
-}
-
-.footer_columns+.ractangle {
-  margin-top: 100px;
 }
 
 @media (max-width: 1024px) {
