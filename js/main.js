@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // AOS (있을 때만)
   if (window.AOS) {
     AOS.init({ 
-      duration: 800,  
+      duration: 1500,  
       once: false,     // ⭐ 다시 들어오면 반복 실행
       mirror: true });
   }
