@@ -356,7 +356,7 @@
   cursor: pointer;
 }
 
-.info_section ul li::after {
+/* .info_section ul li::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -365,6 +365,10 @@
   transition: opacity 0.45s ease;
   z-index: 1;
 }
+
+.info_section ul li:hover::after {
+  opacity: 1;
+} */
 
 .info_section ul:hover li {
   flex: 0.75;
@@ -390,12 +394,10 @@
 
 .info_section ul li:hover img {
   transform: scale(1.04);
-  filter: blur(2px) brightness(0.95);
+  filter: blur(3px) brightness(.95);
 }
 
-.info_section ul li:hover::after {
-  opacity: 1;
-}
+
 
 .info_section .txt_box {
   position: absolute;
@@ -406,19 +408,36 @@
 }
 
 .info_section .txt_box a {
-  display: inline-block;
+  display: inline-flex;
   max-width: 100%;
   color: #fafafa;
   font-size: 28px;
   font-weight: 400;
   line-height: 1.25;
   word-break: keep-all;
-  white-space: normal;
-  transition: color 0.35s ease;
-}
-
-.info_section ul li:hover .txt_box a {
-  color: #171717;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.35s ease;
+  position: relative;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.info_section .txt_box a::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  background: #8C030E;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  transition: .8s;
+  left: 0;
+  top: 0;
+}
+
+.info_section ul li:hover .txt_box a::before {
+  width: 100%;
 }
