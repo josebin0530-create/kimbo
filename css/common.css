@@ -144,8 +144,8 @@ nav {
   border-radius: 10px;
   font-size: 13px;
   color: #fafafa;
-  border: 1px solid rgba(255, 255, 255, 0.835);
-  background: rgba(203, 203, 203, 0.479);
+ 
+   background: rgba(255, 255, 255, .2);
   transition: .2s;
 }
 
@@ -158,13 +158,12 @@ nav {
   justify-content: center;
   font-size: 13px;
   color: #fafafa;
-  border: 1px solid rgba(255, 255, 255, 0.835);
   background: rgba(184, 22, 22, 0.495);
   transition: .2s;
 }
 
 .right_btn:nth-child(1):hover {
-  background: rgba(255, 255, 255, .2);
+  background: rgba(203, 203, 203, 0.8);
 }
 
 .right_btn:nth-child(2):hover {
